@@ -12,7 +12,7 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = 'User'
     id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
+    loginName = Column(String, nullable=False)
     password = Column(String, nullable=False)
     loginStatus = Column(String, nullable=False)
     registerDate = Column(String, nullable=False)
@@ -59,3 +59,10 @@ class Planets(Base):
 
 ## Draw from SQLAlchemy base
 render_er(Base, 'diagram.png')
+
+  ##   comandos para correr esta gitpod
+   ##  pipenv shell
+    ## pipenv install
+   ##  python src/models.py
+
+
