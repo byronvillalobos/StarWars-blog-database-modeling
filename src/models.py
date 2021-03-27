@@ -12,7 +12,8 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = 'User'
     id = Column(Integer, primary_key=True)
-    loginName = Column(String, nullable=False)
+    loginName = Column(String(50), unique=True)
+    email = Column(String(250), unique=True)
     password = Column(String, nullable=False)
     loginStatus = Column(String, nullable=False)
     registerDate = Column(String, nullable=False)
@@ -64,5 +65,3 @@ render_er(Base, 'diagram.png')
    ##  pipenv shell
     ## pipenv install
    ##  python src/models.py
-
-
